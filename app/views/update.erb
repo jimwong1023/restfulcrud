@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Update <%= @note.title %></h1>
+  <form action="/update" method="POST">
+  	<input type="hidden" name="note_id" value="<%= @note.id %>">
+  	<p>Title</p>
+    <input type="text" name="title" placeholder="<%= @note.title %>"><br>
+    <p>Description</p>
+    <textarea name="description" placeholder="<%= @note.description %>"></textarea><br>
+    <input type="submit" value="Update">
+  </form>
+</div>

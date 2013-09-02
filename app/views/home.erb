@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Welcome to Create a Note!</h1><br>
+  <h2>All Notes</h3><br>
+  <% @notes.each do |note| %>
+    <a href="/note/<%= note.id %>"><%= note.title %></a>
+    <form action="/delete_confirm" method="GET">
+      <input type="hidden" name="note_id" value="<%= note.id %>">
+      <input type="submit" value="Delete">
+    </form>
+    <form action="/update" method="GET">
+      <input type="hidden" name="note_id" value="<%= note.id %>">
+      <input type="submit" value="Update">
+    </form><br><br>
+  <% end %>
+  <br>
+  <h3>Create your own note!</h3>
+  <a href="/create">Create a new note</a>
